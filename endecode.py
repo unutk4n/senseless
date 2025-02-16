@@ -1,7 +1,30 @@
 import base64
 
-message = "Python is fun"
-message_bytes = message.encode('utf-8')
-base64_bytes = base64.b64encode(message_bytes)
-base64_message = base64_bytes.decode('utf-8')
-print(base64_message)
+def encode(filename, newfilename):
+    
+    try:
+        with open(filename, 'rb') as f:
+            reading = f.read()
+            encoding = base64.b64encode(reading)
+        with open(newfilename,"wb") as f:
+            f.write(encoding)
+
+    except FileNotFoundError:
+        print("FILE NOT FOUND ! ! ! ")
+
+
+def decode(filename, newfilename):
+    try:
+        with open(filename, "rb") as f:
+            reading = f.read()
+            decoding = base64.b64decode(reading)        
+        with open(newfilename,"wb") as f:
+            f.write(decoding)
+
+    
+    except FileNotFoundError:
+        print("FILE NOT FOUND !! ! ! ")
+
+    except base64.binascii.Error:
+        print("invalid base64 data ! ! ! ! ")
+    
