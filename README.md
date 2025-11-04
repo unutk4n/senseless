@@ -1,7 +1,3 @@
-English and Turkish 
-Ingilizce ve Turkce
-
-
 **Senseless** is a lightweight Python utility that helps you **encode** and **decode** text files using Base64.  
 It’s made for simplicity — no dependencies, no complicated setup, just clean and direct functionality.
 
